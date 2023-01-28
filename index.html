@@ -13,10 +13,53 @@
     <div class="image-holder">
       <img src="space.jpeg" alt="A clear night sky with lots of stars">
     </div>
-    <div class="user-form">
-      <form >
-        <label for="user-first">First:</label>
-        <input type="text" name="user-first" id="user-first">
+    <div class="user-form-container">
+      <p class="introduction">
+        This is not a real online service! 
+        Feel free to sign-in and fufill <em>your</em> deepest wishes!
+        Plus it makes this project look legit!
+      </p>
+      <p class="persuasion">You <em>know</em> you want to...</p>
+      <form class="user-form">
+        <p class="form-title">Sign-in here please</p>
+
+        <div class="form-column-container">
+
+          <div class="form-column-1">
+            <div class="input-holder">
+              <label for="first-name">first name</label>
+              <input type="text" id="first-name" name="user-first">
+            </div>
+
+            <div class="input-holder">
+              <label for="email">email</label>
+              <input type="email" name="user-email" id="email">
+            </div>
+
+            <div class="input-holder">
+              <label for="password">password</label>
+              <input type="password" name="user-password" id="password">
+            </div>
+          </div>
+
+          <div class="form-column-2">
+            <div class="input-holder">
+              <label for="last-name">last name</label>
+              <input type="text" id="last-name" name="user-last">
+            </div>
+
+            <div class="input-holder">
+              <label for="phone-number">phone number</label>
+              <input type="tel" name="user-phone" id="phone-number">
+            </div>
+
+            <div class="input-holder">
+              <label for="confirm-pass">confirm password</label>
+              <input type="text" id="confirm-pass" name="user-confirm-pass">
+            </div>
+          </div>
+
+        </div>
       </form>
     </div>
   </div>

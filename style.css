@@ -53,6 +53,10 @@ html {
   width: 100vw;
 }
 
+em {
+	font-style: italic;
+}
+
 img {
   object-position: -10em;
 }
@@ -61,11 +65,67 @@ img {
   display: flex;
 }
 
+
 .image-holder {
   overflow: hidden;
   flex: 1;
 }
 
-.user-form {
+/*User form styling*/
+.user-form-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+
+	padding-bottom: 5em;
+	padding-left: 20px;
   flex: 1.25;
+}
+
+.form-column-container {
+	display: flex;
+	gap: 1em;
+}
+
+.form-column-1,
+.form-column-2 {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	flex: 1;
+}
+
+.input-holder {
+	position: relative;
+}
+
+input {
+	margin: 1.80em 0;
+	width: max(75%, 10em);
+}
+
+label {
+	font-size: calc(.5vw + 12px);
+	text-transform: capitalize;
+	position: absolute;
+}
+
+.introduction {
+	font-size: calc(1.40vw + 10px);
+}
+
+.persuasion {
+	font-size: calc(1.10vw + 10px);
+	margin-top: calc(-1% + -1em);
+}
+
+.form-title {
+	font-size: calc(1vw + 15px);
+	margin-bottom: 2em;
+}
+
+@media screen and (max-width: 600px) {
+  .form-column-container {
+    flex-direction: column;
+  }
 }
