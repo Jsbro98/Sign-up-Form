@@ -110,7 +110,7 @@ input {
 }
 
 label {
-	font-size: calc(.5vw + 12px);
+	font-size: calc(.3vw + 12px);
 	text-transform: capitalize;
 	position: absolute;
 }
@@ -121,19 +121,35 @@ label {
 }
 
 .introduction {
-	font-size: calc(1.40vw + 10px);
+	font-size: calc(1vw + 10px);
 	line-height: calc(2vw + 15px);
 }
 
 .persuasion {
-	font-size: calc(1.05vw + 10px);
+	font-size: calc(.75vw + 10px);
 	margin-top: 1em;
 }
 
 .form-title {
-	font-size: calc(1vw + 15px);
+	font-size: calc(.80vw + 15px);
 	margin-top: 1em;
 	margin-bottom: 2em;
+}
+
+.create-account-button {
+	font-size: calc(.4vw + 15px);
+	position: relative;
+	top: -2rem;
+	margin-left: 5rem;
+	margin-top: 20px;
+	height: max(2rem, 7%);
+	width: max(10rem, 25%);S
+	text-align: center;
+	border-radius: 10px;
+	color: white;
+	background-color: rgb(69, 69, 197);
+	box-shadow: 2px 5px 5px rgba(123, 123, 123, 0.528);
+	border: 0;
 }
 
 @media screen and (max-width: 600px) {
@@ -152,5 +168,9 @@ label {
 
 	.wrapper {
 		flex-direction: column;
+	}
+
+	.create-account-button {
+		position: static;
 	}
 }
