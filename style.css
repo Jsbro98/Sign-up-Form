@@ -78,8 +78,12 @@ img {
 	justify-content: space-evenly;
 
 	padding-bottom: 5em;
+  flex: 1.45;
+}
+
+.user-form {
+	box-shadow: 5px 3px 8px rgba(123, 123, 123, 0.44);
 	padding-left: 20px;
-  flex: 1.25;
 }
 
 .form-column-container {
@@ -113,11 +117,13 @@ label {
 .introduction {
 	font-size: calc(1.40vw + 10px);
 	line-height: calc(2vw + 15px);
+	padding-left: 20px;
 }
 
 .persuasion {
-	font-size: calc(1.10vw + 10px);
-	margin-top: calc(1% + .5vh);
+	font-size: calc(1.05vw + 10px);
+	margin-top: calc(1% + .25vh);
+	padding-left: 20px;
 }
 
 .form-title {
