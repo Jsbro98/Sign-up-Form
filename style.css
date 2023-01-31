@@ -46,6 +46,9 @@ table {
 
 
 
+* {
+	font-family: 'Lato', sans-serif !important;
+}
 
 
 html {
@@ -85,6 +88,7 @@ em {
 .user-form {
 	box-shadow: 5px 3px 8px rgba(123, 123, 123, 0.44);
 	padding-left: 5rem;
+	padding-bottom: 2em;
 }
 
 .form-column-container {
@@ -105,19 +109,25 @@ em {
 }
 
 input {
-	margin: 1.80em 0;
+	margin: 2em 0;
 	width: max(75%, 10em);
+	height: 2.5em;
+	border-radius: 8px;
+	border: 1px solid rgba(123, 123, 123, 0.325);
 }
 
 label {
-	font-size: calc(.3vw + 12px);
-	text-transform: capitalize;
+	font-size: calc(.25vw + 10px);
+	letter-spacing: 2px;
+	text-transform: uppercase;
 	position: absolute;
+	top: .5em;
 }
 
 .introduction-container {
 	padding-right: max(5rem, 25%);
 	padding-left: 5rem;
+	margin-bottom: 4em;
 }
 
 .introduction {
@@ -139,11 +149,10 @@ label {
 .create-account-button {
 	font-size: calc(.4vw + 15px);
 	position: relative;
-	top: -2rem;
 	margin-left: 5rem;
 	margin-top: 20px;
-	height: max(2rem, 7%);
-	width: max(10rem, 25%);S
+	height: max(3rem, 4vw);
+	width: max(10rem, 25%);
 	text-align: center;
 	border-radius: 10px;
 	color: white;
@@ -152,7 +161,25 @@ label {
 	border: 0;
 }
 
-@media screen and (max-width: 600px) {
+.log-in {
+	font-size: calc(.3vw + 15px);
+	margin-left: 5rem;
+	position: relative;
+	margin-top: 1em;
+}
+
+.log-in-link {
+	text-decoration: none;
+	color: blue;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 722px) {
+
+	.introduction-container {
+		margin-top: 1em;
+	}
+
   .form-column-container {
     flex-direction: column;
   }
@@ -172,5 +199,10 @@ label {
 
 	.create-account-button {
 		position: static;
+	}
+
+	.log-in {
+		position: static;
+		margin-top: 2em;
 	}
 }
