@@ -72,7 +72,7 @@ em {
 
 .image-holder > img {
 	height: 100vh;
-	object-position: -20rem;
+	object-position: -23rem;
 }
 
 /*User form styling*/
@@ -82,7 +82,7 @@ em {
 	justify-content: space-evenly;
 
 	padding-bottom: 5em;
-  flex: 1.45;
+  flex: 2;
 }
 
 .user-form {
@@ -92,8 +92,8 @@ em {
 }
 
 .form-column-container {
+	width: 72%;
 	display: flex;
-	gap: 1em;
 }
 
 .form-column-1,
@@ -125,9 +125,11 @@ label {
 }
 
 .introduction-container {
+	padding-top: 5em;
 	padding-right: max(5rem, 25%);
 	padding-left: 5rem;
 	margin-bottom: 4em;
+	font-weight: bold;
 }
 
 .introduction {
@@ -147,12 +149,13 @@ label {
 }
 
 .create-account-button {
+	font-weight: bold;
 	font-size: calc(.4vw + 15px);
 	position: relative;
 	margin-left: 5rem;
-	margin-top: 20px;
-	height: max(3rem, 4vw);
-	width: max(10rem, 25%);
+	margin-top: 1.5em;
+	height: max(3rem, 3vw);
+	width: max(10rem, 27%);
 	text-align: center;
 	border-radius: 10px;
 	color: white;
@@ -165,7 +168,7 @@ label {
 	font-size: calc(.3vw + 15px);
 	margin-left: 5rem;
 	position: relative;
-	margin-top: 1em;
+	margin-top: 2em;
 }
 
 .log-in-link {
@@ -187,6 +190,7 @@ label {
 	.image-holder > img {
 		height: 65vh;
 		object-position: -10rem;
+		width: 150vw;
 	}
 
 	.form-column-2 {
