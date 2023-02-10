@@ -68,13 +68,26 @@ em {
 
 
 .image-holder {
+	display: flex;
+	position: relative;
   overflow: hidden;
   flex: 1;
 }
 
-.image-holder > img {
-	height: 100vh;
-	object-position: -23rem;
+.background-image {
+	display: block;
+	flex: 1;
+	background-image: url("space.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: -20em;
+}
+
+.top-layer-text-logo {
+	position: absolute;
+	background-color: black;
+	height: 10em;
+	width: 100%;
 }
 
 /*User form styling*/
