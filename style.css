@@ -44,7 +44,9 @@ table {
 
 
 
-
+:root {
+	--form-padding: 4rem;
+}
 
 * {
 	font-family: 'Lato', sans-serif !important;
@@ -87,8 +89,8 @@ em {
 
 .user-form {
 	box-shadow: 5px 3px 8px rgba(123, 123, 123, 0.44);
-	padding-left: 5rem;
-	padding-bottom: 2em;
+	padding-left: var(--form-padding);
+	padding-bottom: .5em;
 }
 
 .form-column-container {
@@ -125,9 +127,9 @@ label {
 }
 
 .introduction-container {
-	padding-top: 5em;
+	padding-top: 8em;
 	padding-right: max(5rem, 25%);
-	padding-left: 5rem;
+	padding-left: var(--form-padding);
 	margin-bottom: 4em;
 	font-weight: bold;
 }
@@ -144,15 +146,15 @@ label {
 
 .form-title {
 	font-size: calc(.80vw + 15px);
-	margin-top: 1em;
-	margin-bottom: 2em;
+	margin-top: .5em;
+	margin-bottom: 1em;
 }
 
 .create-account-button {
 	font-weight: bold;
 	font-size: calc(.4vw + 15px);
 	position: relative;
-	margin-left: 5rem;
+	margin-left: var(--form-padding);
 	margin-top: 1.5em;
 	height: max(3rem, 3vw);
 	width: max(10rem, 27%);
@@ -166,7 +168,7 @@ label {
 
 .log-in {
 	font-size: calc(.3vw + 15px);
-	margin-left: 5rem;
+	margin-left: var(--form-padding);
 	position: relative;
 	margin-top: 2em;
 }
