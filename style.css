@@ -85,7 +85,8 @@ em {
 
 .top-layer-text-logo {
 	position: absolute;
-	background-color: black;
+	top: 11em;
+	background-color: rgba(0, 0, 0, 0.466);
 	height: 10em;
 	width: 100%;
 }
