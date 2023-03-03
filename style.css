@@ -74,6 +74,11 @@ em {
   flex: 1;
 }
 
+.logo {
+	height: 100%; width: 15em;
+	object-fit: contain;
+}
+
 .background-image {
 	display: block;
 	flex: 1;
@@ -89,6 +94,14 @@ em {
 	background-color: rgba(0, 0, 0, 0.466);
 	height: 10em;
 	width: 100%;
+}
+
+.top-layer-text {
+	position: absolute;
+	right: 2px;
+	font-size: 4em;
+	top: 25%;
+	color: white;
 }
 
 /*User form styling*/
