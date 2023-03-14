@@ -75,7 +75,7 @@ em {
 }
 
 .logo {
-	height: 100%; width: 15em;
+	height: 100%; width: calc(2em + 15vw);
 	object-fit: contain;
 }
 
@@ -94,13 +94,13 @@ em {
 	background-color: rgba(0, 0, 0, 0.466);
 	height: 10em;
 	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .top-layer-text {
-	position: absolute;
-	right: 2px;
-	font-size: 4em;
-	top: 25%;
+	font-size: calc(1em + 2.5vw);
 	color: white;
 }
 
@@ -209,6 +209,15 @@ label {
 }
 
 @media screen and (max-width: 722px) {
+
+	.top-layer-text-logo {
+		top: 6em;
+	}
+
+	.background-image {
+		background-size: auto;
+		height: 20em;
+	}
 
 	.introduction-container {
 		margin-top: 1em;
