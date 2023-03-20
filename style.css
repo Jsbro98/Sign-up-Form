@@ -52,12 +52,6 @@ table {
 	font-family: 'Lato', sans-serif !important;
 }
 
-
-html {
-  height: 100vh;
-  width: 100vw;
-}
-
 em {
 	font-style: italic;
 }
@@ -140,10 +134,11 @@ em {
 
 input {
 	margin: 1.5em 0;
-	width: max(75%, 10em);
+	width: max(70%, 9.5em);
 	height: 2.5em;
 	border-radius: 8px;
 	border: 1px solid rgba(123, 123, 123, 0.202);
+	padding-left: 1em;
 }
 
 input:focus {
