@@ -134,11 +134,12 @@ em {
 
 input {
 	margin: 1.5em 0;
-	width: max(70%, 9.5em);
+	width: max(70%, 7em);
 	height: 2.5em;
 	border-radius: 8px;
 	border: 1px solid rgba(123, 123, 123, 0.202);
 	padding-left: 1em;
+	font-size: 100%;
 }
 
 input:focus {
