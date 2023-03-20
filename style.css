@@ -197,6 +197,14 @@ label {
 	border: 0;
 }
 
+.create-account-button:hover {
+	background-color: rgb(86, 86, 241);
+}
+
+.create-account-button:active {
+	background-color: rgb(52, 52, 149);
+}
+
 .log-in {
 	font-size: calc(.25vw + 15px);
 	margin-left: var(--form-padding);
