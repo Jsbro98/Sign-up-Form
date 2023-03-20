@@ -29,7 +29,7 @@
         </p>
         <p class="persuasion">You <em>know</em> you want to...</p>
       </div>
-      <form class="user-form">
+      <form class="user-form" novalidate>
         <p class="form-title">Credentials.... Now!</p>
 
         <div class="form-column-container">
@@ -37,34 +37,57 @@
           <div class="form-column-1">
             <div class="input-holder">
               <label for="first-name">first name</label>
-              <input type="text" id="first-name" name="user-first">
+              <input type="text"
+                     id="first-name" 
+                     name="user-first"
+                     minlength="1"
+                     required
+                     maxlength="50" />
             </div>
 
             <div class="input-holder">
               <label for="email">email</label>
-              <input type="email" name="user-email" id="email">
+              <input type="email" 
+                      name="user-email" 
+                      id="email"
+                      required />
             </div>
 
             <div class="input-holder">
               <label for="password">password</label>
-              <input type="password" name="user-password" id="password">
+              <input type="password" 
+                      name="user-password" 
+                      id="password"
+                      required
+                      minlength="12" />
             </div>
           </div>
 
           <div class="form-column-2">
             <div class="input-holder">
               <label for="last-name">last name</label>
-              <input type="text" id="last-name" name="user-last">
+              <input type="text" 
+                      id="last-name" 
+                      name="user-last"
+                      required
+                      minlength="1"
+                      maxlength="50" />
             </div>
 
             <div class="input-holder">
               <label for="phone-number">phone number</label>
-              <input type="tel" name="user-phone" id="phone-number">
+              <input type="tel" 
+                      name="user-phone" 
+                      id="phone-number"
+                      required />
             </div>
 
             <div class="input-holder">
               <label for="confirm-pass">confirm password</label>
-              <input type="text" id="confirm-pass" name="user-confirm-pass">
+              <input type="text" 
+                      id="confirm-pass" 
+                      name="user-confirm-pass"
+                      required />
             </div>
           </div>
 
