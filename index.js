@@ -1,22 +1,23 @@
 // all input fields
-const firstName = document.querySelector('#first-name');
-const lastName = document.querySelector('#last-name');
-const email = document.querySelector('#email');
-const password = document.querySelector('#password');
-const phoneNumber = document.querySelector('#phone-number');
-const confirmPass = document.querySelector('#confirm-pass');
+const FIRSTNAME = document.querySelector('#first-name');
+const LASTNAME = document.querySelector('#last-name');
+const EMAIL = document.querySelector('#email');
+const PASSWORD = document.querySelector('#password');
+const PHONENUMBER = document.querySelector('#phone-number');
+const CONFIRMPASS = document.querySelector('#confirm-pass');
 
 
-const submitButton = document.querySelector('.create-account-button');
-const form = document.querySelector('.user-form');
+const SUBMITBUTTON = document.querySelector('.create-account-button');
+const FORM = document.querySelector('.user-form');
 
 const submitForm = (e) => {
-  const isUserNameValid = checkRequiredMinAndMax(firstName) && checkRequiredMinAndMax(lastName);
-  const isEmailValid = checkTypeMismatch(email);
-  const isPasswordValid = checkRequiredMinAndMax(password);
+  const isUserNameValid = checkRequiredMinAndMax(FIRSTNAME) && checkRequiredMinAndMax(LASTNAME);
+  const isEmailValid = checkTypeMismatch(EMAIL);
+  const isPasswordValid = checkRequiredMinAndMax(PASSWORD);
+  const isPhoneNumberValid = checkPhoneNumber(PHONENUMBER);
 
   if (isUserNameValid && isEmailValid && isPasswordValid) {
-    form.submit();
+    FORM.submit();
   } else {
     preventSubmission(e);
   };
@@ -48,6 +49,24 @@ const submitForm = (e) => {
     };
     return true;
   };
+
+  function checkPhoneNumber(elem) {
+    let value = elem.value;
+
+    const tokens = ['(', ')', ' ', '-'];
+
+    for (token of tokens) {
+      if (value.includes(token)) {
+        value = value.replaceAll(token, '');
+      };
+    };
+
+    if (typeof(+value) === 'number' && value.length === 10) {
+      return true;
+    };
+
+    return false;
+  };
 };
 
-submitButton.addEventListener('click', submitForm);
+SUBMITBUTTON.addEventListener('click', submitForm);
