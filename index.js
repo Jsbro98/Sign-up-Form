@@ -15,8 +15,9 @@ const submitForm = (e) => {
   const isEmailValid = checkTypeMismatch(EMAIL);
   const isPasswordValid = checkRequiredMinAndMax(PASSWORD);
   const isPhoneNumberValid = checkPhoneNumber(PHONENUMBER);
+  const doPasswordsMatch = comparePassValues(PASSWORD, CONFIRMPASS);
 
-  if (isUserNameValid && isEmailValid && isPasswordValid && isPhoneNumberValid) {
+  if (isUserNameValid && isEmailValid && isPasswordValid && isPhoneNumberValid && doPasswordsMatch) {
     FORM.submit();
   } else {
     preventSubmission(e);
@@ -67,6 +68,12 @@ const submitForm = (e) => {
 
     return false;
   };
+
+  function comparePassValues(elem1, elem2) {
+    if (elem1.value === elem2.value) return true;
+    return false;
+  };
+  
 };
 
 SUBMITBUTTON.addEventListener('click', submitForm);
