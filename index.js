@@ -16,7 +16,7 @@ const submitForm = (e) => {
   const isPasswordValid = checkRequiredMinAndMax(PASSWORD);
   const isPhoneNumberValid = checkPhoneNumber(PHONENUMBER);
 
-  if (isUserNameValid && isEmailValid && isPasswordValid) {
+  if (isUserNameValid && isEmailValid && isPasswordValid && isPhoneNumberValid) {
     FORM.submit();
   } else {
     preventSubmission(e);
