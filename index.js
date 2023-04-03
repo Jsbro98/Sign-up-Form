@@ -5,6 +5,7 @@ const EMAIL = document.querySelector('#email');
 const PASSWORD = document.querySelector('#password');
 const PHONENUMBER = document.querySelector('#phone-number');
 const CONFIRMPASS = document.querySelector('#confirm-pass');
+const INPUTARRAY = document.querySelectorAll('input');
 
 
 const SUBMITBUTTON = document.querySelector('.create-account-button');
@@ -25,17 +26,12 @@ const submitForm = (e) => {
 
   function checkRequiredMinAndMax(elem) {
 
-    if (elem.validity.tooShort) {
-      console.log('A name is too short');
+    if (elem.validity.tooShort || elem.validity.tooLong || elem.validity.valueMissing) {
+      addValidOrInvalidClass(elem, 'invalid')
       return false;
-    } else if (elem.validity.tooLong) {
-      console.log('A name is too long');
-      return false;
-    } else if (elem.validity.valueMissing) {
-      console.log('Please fill out required fields');
-      return false;
-    }
+    };
 
+    addValidOrInvalidClass(elem, 'valid');
     return true;
   };
 
@@ -46,8 +42,10 @@ const submitForm = (e) => {
 
   function checkTypeMismatch(elem) {
     if (elem.validity.typeMismatch) {
+      addValidOrInvalidClass(elem, 'invalid');
       return false;
     };
+    addValidOrInvalidClass('valid');
     return true;
   };
 
@@ -63,17 +61,32 @@ const submitForm = (e) => {
     };
 
     if (typeof(+value) === 'number' && value.length === 10) {
+      addValidOrInvalidClass(elem, 'valid');
       return true;
     };
 
+    addValidOrInvalidClass(elem, 'invalid');
     return false;
   };
 
   function comparePassValues(elem1, elem2) {
-    if (elem1.value === elem2.value) return true;
+    if (elem1.value === elem2.value) {
+      addValidOrInvalidClass(elem2, 'valid');
+      return true;
+    };
+
+    addValidOrInvalidClass(elem2, 'invalid');
     return false;
   };
-  
+
+  function addValidOrInvalidClass(elem, value) {
+    debugger;
+    const id = elem.id;
+    const label = document.querySelector(`[for="${id}"]`);
+    elem.classList.add(`input-${value}`);
+    label.classList.add(`label-${value}`);
+  };
+
 };
 
 SUBMITBUTTON.addEventListener('click', submitForm);

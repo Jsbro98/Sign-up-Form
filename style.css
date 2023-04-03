@@ -222,6 +222,23 @@ label {
 	font-weight: bold;
 }
 
+/* Below are the invalid styles */
+.input-valid {
+	border: 1px solid lime;
+}
+
+.input-invalid {
+	border: 1px solid red;
+}
+
+.label-valid {
+	color: lime;
+}
+
+.label-invalid {
+	color: red;
+}
+
 @media screen and (max-width: 722px) {
 
 	.top-layer-text-logo {
