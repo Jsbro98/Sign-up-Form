@@ -225,7 +225,7 @@ label {
 /* Below are the invalid styles */
 .input-valid {
 	border: 1px solid lime;
-	transition: ease-in .5s;
+	transition: border ease-in .5s;
 }
 
 .input-valid:focus {
@@ -234,7 +234,7 @@ label {
 
 .input-invalid {
 	border: 1px solid red;
-	transition: ease-in .5s;
+	transition: border ease-in .5s;
 }
 
 .input-invalid:focus {
@@ -243,12 +243,12 @@ label {
 
 .label-valid {
 	color: lime;
-	transition: ease-in .5s;
+	transition: color ease-in .5s;
 }
 
 .label-invalid {
 	color: red;
-	transition: ease-in .5s;
+	transition: color ease-in .5s;
 }
 
 @media screen and (max-width: 722px) {

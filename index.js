@@ -23,13 +23,7 @@ const submitForm = (e) => {
 
   checkFormForEmptyValues(e);
 
-  const isUserNameValid = checkRequiredMinAndMax(FIRSTNAME) && checkRequiredMinAndMax(LASTNAME);
-  const isEmailValid = checkTypeMismatch(EMAIL);
-  const isPasswordValid = checkRequiredMinAndMax(PASSWORD);
-  const isPhoneNumberValid = checkPhoneNumber(PHONENUMBER);
-  const doPasswordsMatch = comparePassValues(PASSWORD, CONFIRMPASS);
-
-  if (isUserNameValid && isEmailValid && isPasswordValid && isPhoneNumberValid && doPasswordsMatch) {
+  if (INPUTARRAY.every(obj => obj.elem.validity.valid)) {
     FORM.submit();
   } else {
     preventSubmission(e);
