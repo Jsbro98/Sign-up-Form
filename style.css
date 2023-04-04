@@ -225,18 +225,30 @@ label {
 /* Below are the invalid styles */
 .input-valid {
 	border: 1px solid lime;
+	transition: ease-in .5s;
+}
+
+.input-valid:focus {
+	border: 1px solid lime;
 }
 
 .input-invalid {
+	border: 1px solid red;
+	transition: ease-in .5s;
+}
+
+.input-invalid:focus {
 	border: 1px solid red;
 }
 
 .label-valid {
 	color: lime;
+	transition: ease-in .5s;
 }
 
 .label-invalid {
 	color: red;
+	transition: ease-in .5s;
 }
 
 @media screen and (max-width: 722px) {
