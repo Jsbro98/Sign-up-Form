@@ -35,9 +35,11 @@ addListenersToInputs();
 
 SUBMITBUTTON.addEventListener('click', submitForm);
 
+// listeners to check for empty input after focusout
 INPUTARRAY.forEach(obj => obj.elem.addEventListener('focusout', (e) => {
   
   if (obj.elem.value === '') {
+    obj.validation();
     addValidOrInvalidClass(obj.elem, 'invalid');
   };
 
@@ -47,6 +49,22 @@ INPUTARRAY.forEach(obj => obj.elem.addEventListener('focusout', (e) => {
 
 
 // functions used for main logic
+
+function addOrRemoveErrorMessage(elem, option, message) {
+  const errorSpan = document.querySelector(`.error-message.${elem.id}`);
+
+  if (option === 'add') {
+
+    errorSpan.textContent = message;
+    errorSpan.style.opacity = '1';
+
+  } else if (option === 'remove') {
+
+    errorSpan.style.opacity = '0';
+  };
+
+};
+
 
 function addListenersToInputs() {
   for (let i = 0; i < INPUTARRAY.length; i++) {
@@ -77,24 +95,55 @@ function preventSubmission(e) {
 
 function checkRequiredMinAndMax(elem) {
 
-  if (elem.validity.tooShort || elem.validity.tooLong || elem.validity.valueMissing) {
+  if (elem.validity.tooShort) {
+
+    addOrRemoveErrorMessage(elem, 'add', `Input is too short, it must be ${elem.minLength} characters long`);
     return false;
+
+  } else if (elem.validity.tooLong) {
+
+    addOrRemoveErrorMessage(elem, 'add', `Input is too long, it must be ${elem.maxLength} characters long`);
+    return false;
+
+  } else if (elem.validity.valueMissing) {
+
+    addOrRemoveErrorMessage(elem, 'add', `This input is required`);
+    return false;
+
   };
 
+  addOrRemoveErrorMessage(elem, 'remove');
   return true;
 };
 
 
 function checkTypeMismatch(elem) {
-  if (elem.validity.typeMismatch || elem.value === '') {
+
+  if (elem.validity.typeMismatch) {
+
+    addOrRemoveErrorMessage(elem, 'add', 'Please enter a valid email address');
     return false;
+
+  } else if (elem.value === '') {
+
+    addOrRemoveErrorMessage(elem, 'add', 'This input is required');
+    return false;
+
   };
+
+  addOrRemoveErrorMessage(elem, 'remove');
   return true;
 };
 
 
 function checkPhoneNumber(elem) {
   let value = elem.value;
+
+  if (value === '') {
+
+    addOrRemoveErrorMessage(elem, 'add', 'This input is required');
+    return false
+  };
 
   const tokens = ['(', ')', ' ', '-'];
 
@@ -106,18 +155,30 @@ function checkPhoneNumber(elem) {
 
 
   if (typeof(+value) === 'number' && value.length === 10) {
+
+    addOrRemoveErrorMessage(elem, 'remove');
     return true;
   };
 
+  addOrRemoveErrorMessage(elem, 'add', 'Please enter a valid phone number');
   return false;
 };
 
 
 function comparePassValues(elem1, elem2) {
+  if (elem2.value === '') {
+
+    addOrRemoveErrorMessage(elem2, 'add', 'This input is required');
+    return false;
+  }
+
   if (elem1.value === elem2.value) {
+
+    addOrRemoveErrorMessage(elem2, 'remove');
     return true;
   };
 
+  addOrRemoveErrorMessage(elem2, 'add', 'Passwords do not match');
   return false;
 };
 
