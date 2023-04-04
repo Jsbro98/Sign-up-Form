@@ -88,7 +88,7 @@ em {
 
 .top-layer-text-logo {
 	position: absolute;
-	top: 11em;
+	top: 13em;
 	background-color: rgba(0, 0, 0, 0.466);
 	height: 10em;
 	width: 100%;
@@ -137,7 +137,7 @@ em {
 }
 
 input {
-	margin: 1.5em 0;
+	margin-top: 2em;
 	width: max(70%, 7em);
 	height: 2.5em;
 	border-radius: 8px;
@@ -156,9 +156,24 @@ label {
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	position: absolute;
-	top: .4em;
+	top: 1em;
 	left: .3em;
 }
+/*Error message styling*/
+.error-message {
+	transition: opacity ease-in .5s;
+	opacity: 0;
+	height: 2em;
+	color: rgba(255, 0, 0, 0.662);
+	width: max(70%, 7em);
+	font-size: calc(.20vw + 8px);
+	font-weight: bold;
+	letter-spacing: 1px;
+	margin-top: 6px;
+	margin-bottom: 5px;
+	padding-left: .5em;
+}
+
 
 .introduction-container {
 	padding-top: 8em;
@@ -224,34 +239,38 @@ label {
 
 /* Below are the invalid styles */
 .input-valid {
-	border: 1px solid lime;
+	border: 1px solid rgb(0, 199, 0);
 	transition: border ease-in .5s;
 }
 
 .input-valid:focus {
-	border: 1px solid lime;
+	border: 1px solid rgb(0, 199, 0);
 }
 
 .input-invalid {
-	border: 1px solid red;
+	border: 1px solid rgb(199, 0, 0);
 	transition: border ease-in .5s;
 }
 
 .input-invalid:focus {
-	border: 1px solid red;
+	border: 1px solid rgb(199, 0, 0);
 }
 
 .label-valid {
-	color: lime;
+	color: rgb(0, 199, 0);
 	transition: color ease-in .5s;
 }
 
 .label-invalid {
-	color: red;
+	color: rgb(199, 0, 0);
 	transition: color ease-in .5s;
 }
 
-@media screen and (max-width: 722px) {
+@media screen and (max-width: 734px) {
+
+	body {
+		overflow: scroll;
+	}
 
 	.top-layer-text-logo {
 		top: 6em;
