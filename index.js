@@ -5,6 +5,7 @@ const EMAIL = document.querySelector('#email');
 const PASSWORD = document.querySelector('#password');
 const PHONENUMBER = document.querySelector('#phone-number');
 const CONFIRMPASS = document.querySelector('#confirm-pass');
+
 const INPUTARRAY = [
   {elem: FIRSTNAME, validation: checkRequiredMinAndMax.bind(this, FIRSTNAME)},
   {elem: LASTNAME, validation: checkRequiredMinAndMax.bind(this, LASTNAME)},
@@ -30,35 +31,49 @@ const submitForm = (e) => {
   };
 };
 
-for (let i = 0; i < INPUTARRAY.length; i++) {
-  const currentElem = INPUTARRAY[i].elem;
-  const currentValidation = INPUTARRAY[i].validation;
-
-  currentElem.addEventListener('input', (e) => {
-
-    if ( currentValidation() ) {
-
-      addValidOrInvalidClass(currentElem, 'valid');
-
-    } else {
-
-      addValidOrInvalidClass(currentElem, 'invalid');
-    };
-
-  });
-};
+addListenersToInputs();
 
 SUBMITBUTTON.addEventListener('click', submitForm);
+
+INPUTARRAY.forEach(obj => obj.elem.addEventListener('focusout', (e) => {
+  
+  if (obj.elem.value === '') {
+    addValidOrInvalidClass(obj.elem, 'invalid');
+  };
+
+}));
 
 
 
 
 // functions used for main logic
 
+function addListenersToInputs() {
+  for (let i = 0; i < INPUTARRAY.length; i++) {
+    const currentElem = INPUTARRAY[i].elem;
+    const currentValidation = INPUTARRAY[i].validation;
+  
+    currentElem.addEventListener('input', (e) => {
+  
+      if ( currentValidation() ) {
+  
+        addValidOrInvalidClass(currentElem, 'valid');
+  
+      } else {
+  
+        addValidOrInvalidClass(currentElem, 'invalid');
+      };
+  
+    });
+  };
+};
+
+
 function preventSubmission(e) {
   e.preventDefault();
   window.history.back();
 };
+
 
 function checkRequiredMinAndMax(elem) {
 
@@ -69,12 +84,14 @@ function checkRequiredMinAndMax(elem) {
   return true;
 };
 
+
 function checkTypeMismatch(elem) {
   if (elem.validity.typeMismatch || elem.value === '') {
     return false;
   };
   return true;
 };
+
 
 function checkPhoneNumber(elem) {
   let value = elem.value;
@@ -87,12 +104,14 @@ function checkPhoneNumber(elem) {
     };
   };
 
+
   if (typeof(+value) === 'number' && value.length === 10) {
     return true;
   };
 
   return false;
 };
+
 
 function comparePassValues(elem1, elem2) {
   if (elem1.value === elem2.value) {
@@ -101,6 +120,7 @@ function comparePassValues(elem1, elem2) {
 
   return false;
 };
+
 
 function addValidOrInvalidClass(elem, value) {
   const id = elem.id;
@@ -121,6 +141,7 @@ function addValidOrInvalidClass(elem, value) {
   label.classList.add(`label-${value}`);
 };
 
+
 // passing event for preventSubmission
 function checkFormForEmptyValues(event) {
   let isAnyElemEmpty = false;
@@ -139,6 +160,7 @@ function checkFormForEmptyValues(event) {
     };
   };
 
+
 function checkForEmptyValue(elem) {
   if (elem.value === '') {
     return true;
@@ -146,4 +168,4 @@ function checkForEmptyValue(elem) {
     return false;
   };
 
-}
+};
