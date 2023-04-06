@@ -7,12 +7,12 @@ const PHONENUMBER = document.querySelector('#phone-number');
 const CONFIRMPASS = document.querySelector('#confirm-pass');
 
 const INPUTARRAY = [
-  {elem: FIRSTNAME, validation: checkRequiredMinAndMax.bind(this, FIRSTNAME)},
-  {elem: LASTNAME, validation: checkRequiredMinAndMax.bind(this, LASTNAME)},
-  {elem: EMAIL, validation: checkTypeMismatch.bind(this, EMAIL)},
-  {elem: PASSWORD, validation: checkRequiredMinAndMax.bind(this, PASSWORD)},
-  {elem: PHONENUMBER, validation: checkPhoneNumber.bind(this, PHONENUMBER)},
-  {elem: CONFIRMPASS, validation: comparePassValues.bind(this, PASSWORD, CONFIRMPASS)}
+  {elem: FIRSTNAME, validation: checkRequiredMinAndMax.bind(null, FIRSTNAME)},
+  {elem: LASTNAME, validation: checkRequiredMinAndMax.bind(null, LASTNAME)},
+  {elem: EMAIL, validation: checkTypeMismatch.bind(null, EMAIL)},
+  {elem: PASSWORD, validation: checkRequiredMinAndMax.bind(null, PASSWORD)},
+  {elem: PHONENUMBER, validation: checkPhoneNumber.bind(null, PHONENUMBER)},
+  {elem: CONFIRMPASS, validation: comparePassValues.bind(null, PASSWORD, CONFIRMPASS)}
 ];
 
 
