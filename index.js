@@ -24,7 +24,7 @@ const submitForm = (e) => {
 
   checkFormForEmptyValues(e);
 
-  if (INPUTARRAY.every(obj => obj.elem.validity.valid)) {
+  if ( INPUTARRAY.every(obj => obj.elem.validity.valid) ) {
     FORM.submit();
   } else {
     preventSubmission(e);
@@ -169,16 +169,19 @@ function comparePassValues(elem1, elem2) {
   if (elem2.value === '') {
 
     addOrRemoveErrorMessage(elem2, 'add', 'This input is required');
+    elem2.setCustomValidity('invalid');
     return false;
   }
 
   if (elem1.value === elem2.value) {
 
     addOrRemoveErrorMessage(elem2, 'remove');
+    elem2.setCustomValidity('');
     return true;
   };
 
   addOrRemoveErrorMessage(elem2, 'add', 'Passwords do not match');
+  elem2.setCustomValidity('invalid');
   return false;
 };
 
