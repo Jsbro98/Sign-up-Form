@@ -20,6 +20,7 @@ const INPUTARRAY = [
 const SUBMITBUTTON = document.querySelector('.create-account-button');
 const FORM = document.querySelector('.user-form');
 
+// Main form submition function
 const submitForm = (e) => {
 
   checkFormForEmptyValues(e);
@@ -30,6 +31,7 @@ const submitForm = (e) => {
     preventSubmission(e);
   };
 };
+
 
 addListenersToInputs();
 
@@ -46,7 +48,7 @@ INPUTARRAY.forEach(obj => obj.elem.addEventListener('focusout', (e) => {
 }));
 
 
-
+// ---------------------------------------------------------------------------------------------------------------
 
 // functions used for main logic
 
